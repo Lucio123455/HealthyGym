@@ -1,0 +1,77 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e6e6e6; /* Cambiado a un tono más claro */
+  margin: 0;
+  padding: 0;
+}
+
+#contenedor {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #1a1a1a; /* Cambiado a un tono más oscuro */
+}
+
+.ejercicio {
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #4285f4;
+}
+
+.campos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.campo {
+  flex: 1;
+  margin-right: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4285f4;
+}
+
+#grupos-musculares {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#botones button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #3498db; /* Cambiado a un tono de azul */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#botones button:hover {
+  background-color: #2980b9; /* Cambiado el color al pasar el ratón por encima */
+}

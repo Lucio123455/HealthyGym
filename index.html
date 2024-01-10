@@ -1,53 +1,932 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #302b2b;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    #contenedor {
-      text-align: center;
-      background-color: #fd6161;
-      border: 1px solid #fd6161;
-      padding: 20px;
-      border-radius: 8px;
-    }
-
-    .ejercicio {
-      margin-bottom: 15px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<div id="contenedor">
-  <h2>Mi Registro de Pesos en el Gimnasio</h2>
+  <div id="grupos-musculares">
+    <div id="botones">
+      <button onclick="mostrarGrupo('pecho')">Pecho</button>
+      <button onclick="mostrarGrupo('pierna')">Piernas</button>
+      <button onclick="mostrarGrupo('espalda')">Espalda</button>
+      <button onclick="mostrarGrupo('biceps')">Biceps</button>
+      <button onclick="mostrarGrupo('triceps')">Triceps</button>
+      <button onclick="mostrarGrupo('deltoides')">Hombro</button>
+      <button onclick="reiniciarEjercicios()">Reiniciar Ejercicios</button>
 
-  <div class="ejercicio">
-    <h3>Ejercicio 1</h3>
-    <label for="peso_ejercicio1">Peso:</label>
-    <input type="number" id="peso_ejercicio1" class="peso" value="0">
+      <!-- Agrega más botones para otros grupos musculares -->
+    </div>
   </div>
 
-  <div class="ejercicio">
-    <h3>Ejercicio 2</h3>
-    <label for="peso_ejercicio2">Peso:</label>
-    <input type="number" id="peso_ejercicio2" class="peso" value="0">
+  <div id="contenedor">
+    <h2>Mi Registro de Pesos en el Gimnasio</h2>
+
+    <div id="pecho" class="grupo-muscular">
+      <div class="ejercicio" id="ejercicio0">
+        <h3>Press Banca</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_PressBanca">Peso:</label>
+            <input type="number" id="peso_PressBanca" class="peso" value="0" oninput="actualizarVariable(0, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_PressBanca">Repeticiones:</label>
+            <input type="number" id="repeticiones_PressBanca" class="repeticiones" value="0"
+              oninput="actualizarVariable(0, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_PressBanca">RIR:</label>
+            <input type="number" id="rir_PressBanca" class="rir" value="0" oninput="actualizarVariable(0, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <div class="ejercicio" id="ejercicio1">
+        <h3>Press inclinado smith</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_PressBanca">Peso:</label>
+            <input type="number" id="peso_PressBanca" class="peso" value="0" oninput="actualizarVariable(1, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_PressBanca">Repeticiones:</label>
+            <input type="number" id="repeticiones_PressBanca" class="repeticiones" value="0"
+              oninput="actualizarVariable(1, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_PressBanca">RIR:</label>
+            <input type="number" id="rir_PressBanca" class="rir" value="0" oninput="actualizarVariable(1, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <div class="ejercicio" id="ejercicio2">
+        <h3>Cruce de poleas</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_PressBanca">Peso:</label>
+            <input type="number" id="peso_PressBanca" class="peso" value="0" oninput="actualizarVariable(2, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_PressBanca">Repeticiones:</label>
+            <input type="number" id="repeticiones_PressBanca" class="repeticiones" value="0"
+              oninput="actualizarVariable(2, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_PressBanca">RIR:</label>
+            <input type="number" id="rir_PressBanca" class="rir" value="0" oninput="actualizarVariable(2, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Apertura en Máquina -->
+      <div class="ejercicio" id="ejercicio3">
+        <h3>Apertura en Máquina</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_AperturaMaquina">Peso:</label>
+            <input type="number" id="peso_AperturaMaquina" class="peso" value="0"
+              oninput="actualizarVariable(3, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_AperturaMaquina">Repeticiones:</label>
+            <input type="number" id="repeticiones_AperturaMaquina" class="repeticiones" value="0"
+              oninput="actualizarVariable(3, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_AperturaMaquina">RIR:</label>
+            <input type="number" id="rir_AperturaMaquina" class="rir" value="0" oninput="actualizarVariable(3, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Press Banca en Máquina -->
+      <div class="ejercicio" id="ejercicio4">
+        <h3>Press Banca en Máquina</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_PressBancaMaquina">Peso:</label>
+            <input type="number" id="peso_PressBancaMaquina" class="peso" value="0"
+              oninput="actualizarVariable(4, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_PressBancaMaquina">Repeticiones:</label>
+            <input type="number" id="repeticiones_PressBancaMaquina" class="repeticiones" value="0"
+              oninput="actualizarVariable(4, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_PressBancaMaquina">RIR:</label>
+            <input type="number" id="rir_PressBancaMaquina" class="rir" value="0"
+              oninput="actualizarVariable(4, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Press Inclinado en Máquina -->
+      <div class="ejercicio" id="ejercicio5">
+        <h3>Press Inclinado en Máquina</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_PressInclinadoMaquina">Peso:</label>
+            <input type="number" id="peso_PressInclinadoMaquina" class="peso" value="0"
+              oninput="actualizarVariable(5, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_PressInclinadoMaquina">Repeticiones:</label>
+            <input type="number" id="repeticiones_PressInclinadoMaquina" class="repeticiones" value="0"
+              oninput="actualizarVariable(5, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_PressInclinadoMaquina">RIR:</label>
+            <input type="number" id="rir_PressInclinadoMaquina" class="rir" value="0"
+              oninput="actualizarVariable(5, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Press Inclinado con Mancuerna -->
+      <div class="ejercicio" id="ejercicio13">
+        <h3>Press Inclinado con Mancuerna</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_PressInclinadoMancuerna">Peso:</label>
+            <input type="number" id="peso_PressInclinadoMancuerna" class="peso" value="0"
+              oninput="actualizarVariable(13, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_PressInclinadoMancuerna">Repeticiones:</label>
+            <input type="number" id="repeticiones_PressInclinadoMancuerna" class="repeticiones" value="0"
+              oninput="actualizarVariable(13, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_PressInclinadoMancuerna">RIR:</label>
+            <input type="number" id="rir_PressInclinadoMancuerna" class="rir" value="0"
+              oninput="actualizarVariable(13, 'rir')">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="pierna" class="grupo-muscular">
+      <!-- Sentadilla Hack -->
+      <div class="ejercicio" id="ejercicio6">
+        <h3>Sentadilla Hack</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_SentadillaHack">Peso:</label>
+            <input type="number" id="peso_SentadillaHack" class="peso" value="0"
+              oninput="actualizarVariable(6, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_SentadillaHack">Repeticiones:</label>
+            <input type="number" id="repeticiones_SentadillaHack" class="repeticiones" value="0"
+              oninput="actualizarVariable(6, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_SentadillaHack">RIR:</label>
+            <input type="number" id="rir_SentadillaHack" class="rir" value="0" oninput="actualizarVariable(6, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Sentadilla Smith -->
+      <div class="ejercicio" id="ejercicio7">
+        <h3>Sentadilla Smith</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_SentadillaSmith">Peso:</label>
+            <input type="number" id="peso_SentadillaSmith" class="peso" value="0"
+              oninput="actualizarVariable(7, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_SentadillaSmith">Repeticiones:</label>
+            <input type="number" id="repeticiones_SentadillaSmith" class="repeticiones" value="0"
+              oninput="actualizarVariable(7, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_SentadillaSmith">RIR:</label>
+            <input type="number" id="rir_SentadillaSmith" class="rir" value="0" oninput="actualizarVariable(7, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Prensa -->
+      <div class="ejercicio" id="ejercicio8">
+        <h3>Prensa</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_Prensa">Peso:</label>
+            <input type="number" id="peso_Prensa" class="peso" value="0" oninput="actualizarVariable(8, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_Prensa">Repeticiones:</label>
+            <input type="number" id="repeticiones_Prensa" class="repeticiones" value="0"
+              oninput="actualizarVariable(8, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_Prensa">RIR:</label>
+            <input type="number" id="rir_Prensa" class="rir" value="0" oninput="actualizarVariable(8, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Extensión de Cuádriceps -->
+      <div class="ejercicio" id="ejercicio9">
+        <h3>Extensión de Cuádriceps</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_ExtensionCuadriceps">Peso:</label>
+            <input type="number" id="peso_ExtensionCuadriceps" class="peso" value="0"
+              oninput="actualizarVariable(9, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_ExtensionCuadriceps">Repeticiones:</label>
+            <input type="number" id="repeticiones_ExtensionCuadriceps" class="repeticiones" value="0"
+              oninput="actualizarVariable(9, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_ExtensionCuadriceps">RIR:</label>
+            <input type="number" id="rir_ExtensionCuadriceps" class="rir" value="0"
+              oninput="actualizarVariable(9, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Curl Femoral Acostado -->
+      <div class="ejercicio" id="ejercicio10">
+        <h3>Curl Femoral Acostado</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_CurlFemoralAcostado">Peso:</label>
+            <input type="number" id="peso_CurlFemoralAcostado" class="peso" value="0"
+              oninput="actualizarVariable(10, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_CurlFemoralAcostado">Repeticiones:</label>
+            <input type="number" id="repeticiones_CurlFemoralAcostado" class="repeticiones" value="0"
+              oninput="actualizarVariable(10, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_CurlFemoralAcostado">RIR:</label>
+            <input type="number" id="rir_CurlFemoralAcostado" class="rir" value="0"
+              oninput="actualizarVariable(10, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Peso Muerto Rumano -->
+      <div class="ejercicio" id="ejercicio11">
+        <h3>Peso Muerto Rumano</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_PesoMuertoRumano">Peso:</label>
+            <input type="number" id="peso_PesoMuertoRumano" class="peso" value="0"
+              oninput="actualizarVariable(11, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_PesoMuertoRumano">Repeticiones:</label>
+            <input type="number" id="repeticiones_PesoMuertoRumano" class="repeticiones" value="0"
+              oninput="actualizarVariable(11, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_PesoMuertoRumano">RIR:</label>
+            <input type="number" id="rir_PesoMuertoRumano" class="rir" value="0"
+              oninput="actualizarVariable(11, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Gemelos en Máquina -->
+      <div class="ejercicio" id="ejercicio12">
+        <h3>Gemelos en Máquina</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_GemelosMaquina">Peso:</label>
+            <input type="number" id="peso_GemelosMaquina" class="peso" value="0"
+              oninput="actualizarVariable(12, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_GemelosMaquina">Repeticiones:</label>
+            <input type="number" id="repeticiones_GemelosMaquina" class="repeticiones" value="0"
+              oninput="actualizarVariable(12, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_GemelosMaquina">RIR:</label>
+            <input type="number" id="rir_GemelosMaquina" class="rir" value="0" oninput="actualizarVariable(12, 'rir')">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="espalda" class="grupo-muscular">
+      <!-- Remo en Máquina Unilateral -->
+      <div class="ejercicio" id="ejercicio14">
+        <h3>Remo en Máquina Unilateral</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_RemoMaquinaUnilateral">Peso:</label>
+            <input type="number" id="peso_RemoMaquinaUnilateral" class="peso" value="0"
+              oninput="actualizarVariable(14, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_RemoMaquinaUnilateral">Repeticiones:</label>
+            <input type="number" id="repeticiones_RemoMaquinaUnilateral" class="repeticiones" value="0"
+              oninput="actualizarVariable(14, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_RemoMaquinaUnilateral">RIR:</label>
+            <input type="number" id="rir_RemoMaquinaUnilateral" class="rir" value="0"
+              oninput="actualizarVariable(14, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Remo Gironda -->
+      <div class="ejercicio" id="ejercicio15">
+        <h3>Remo Gironda</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_RemoGironda">Peso:</label>
+            <input type="number" id="peso_RemoGironda" class="peso" value="0" oninput="actualizarVariable(15, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_RemoGironda">Repeticiones:</label>
+            <input type="number" id="repeticiones_RemoGironda" class="repeticiones" value="0"
+              oninput="actualizarVariable(15, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_RemoGironda">RIR:</label>
+            <input type="number" id="rir_RemoGironda" class="rir" value="0" oninput="actualizarVariable(15, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Dominadas -->
+      <div class="ejercicio" id="ejercicio16">
+        <h3>Dominadas</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_Dominadas">Peso:</label>
+            <input type="number" id="peso_Dominadas" class="peso" value="0" oninput="actualizarVariable(16, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_Dominadas">Repeticiones:</label>
+            <input type="number" id="repeticiones_Dominadas" class="repeticiones" value="0"
+              oninput="actualizarVariable(16, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_Dominadas">RIR:</label>
+            <input type="number" id="rir_Dominadas" class="rir" value="0" oninput="actualizarVariable(16, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Jalon al Pecho -->
+      <div class="ejercicio" id="ejercicio17">
+        <h3>Jalon al Pecho</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_JalonPecho">Peso:</label>
+            <input type="number" id="peso_JalonPecho" class="peso" value="0" oninput="actualizarVariable(17, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_JalonPecho">Repeticiones:</label>
+            <input type="number" id="repeticiones_JalonPecho" class="repeticiones" value="0"
+              oninput="actualizarVariable(17, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_JalonPecho">RIR:</label>
+            <input type="number" id="rir_JalonPecho" class="rir" value="0" oninput="actualizarVariable(17, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Remo con Barra -->
+      <div class="ejercicio" id="ejercicio18">
+        <h3>Remo con Barra</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_RemoBarra">Peso:</label>
+            <input type="number" id="peso_RemoBarra" class="peso" value="0" oninput="actualizarVariable(18, 'peso')">
+          </div>
+
+          <div class "campo">
+            <label for="repeticiones_RemoBarra">Repeticiones:</label>
+            <input type="number" id="repeticiones_RemoBarra" class="repeticiones" value="0"
+              oninput="actualizarVariable(18, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_RemoBarra">RIR:</label>
+            <input type="number" id="rir_RemoBarra" class="rir" value="0" oninput="actualizarVariable(18, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Remo en Máquina -->
+      <div class="ejercicio" id="ejercicio19">
+        <h3>Remo en Máquina</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_RemoMaquina">Peso:</label>
+            <input type="number" id="peso_RemoMaquina" class="peso" value="0" oninput="actualizarVariable(19, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_RemoMaquina">Repeticiones:</label>
+            <input type="number" id="repeticiones_RemoMaquina" class="repeticiones" value="0"
+              oninput="actualizarVariable(19, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_RemoMaquina">RIR:</label>
+            <input type="number" id="rir_RemoMaquina" class="rir" value="0" oninput="actualizarVariable(19, 'rir')">
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div id="biceps" class="grupo-muscular">
+      <!-- Curl Bíceps Barra W -->
+      <div class="ejercicio" id="ejercicio20">
+        <h3>Curl Bíceps Barra W</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_CurlBicepsBarraW">Peso:</label>
+            <input type="number" id="peso_CurlBicepsBarraW" class="peso" value="0"
+              oninput="actualizarVariable(20, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_CurlBicepsBarraW">Repeticiones:</label>
+            <input type="number" id="repeticiones_CurlBicepsBarraW" class="repeticiones" value="0"
+              oninput="actualizarVariable(20, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_CurlBicepsBarraW">RIR:</label>
+            <input type="number" id="rir_CurlBicepsBarraW" class="rir" value="0"
+              oninput="actualizarVariable(20, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Curl Bíceps con Barra en Polea Baja -->
+      <div class="ejercicio" id="ejercicio21">
+        <h3>Curl Bíceps con Barra en Polea Baja</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_CurlBicepsBarraPoleaBaja">Peso:</label>
+            <input type="number" id="peso_CurlBicepsBarraPoleaBaja" class="peso" value="0"
+              oninput="actualizarVariable(21, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_CurlBicepsBarraPoleaBaja">Repeticiones:</label>
+            <input type="number" id="repeticiones_CurlBicepsBarraPoleaBaja" class="repeticiones" value="0"
+              oninput="actualizarVariable(21, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_CurlBicepsBarraPoleaBaja">RIR:</label>
+            <input type="number" id="rir_CurlBicepsBarraPoleaBaja" class="rir" value="0"
+              oninput="actualizarVariable(21, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Curl Bíceps Martillo -->
+      <div class="ejercicio" id="ejercicio22">
+        <h3>Curl Bíceps Martillo</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_CurlBicepsMartillo">Peso:</label>
+            <input type="number" id="peso_CurlBicepsMartillo" class="peso" value="0"
+              oninput="actualizarVariable(22, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_CurlBicepsMartillo">Repeticiones:</label>
+            <input type="number" id="repeticiones_CurlBicepsMartillo" class="repeticiones" value="0"
+              oninput="actualizarVariable(22, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_CurlBicepsMartillo">RIR:</label>
+            <input type="number" id="rir_CurlBicepsMartillo" class="rir" value="0"
+              oninput="actualizarVariable(22, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Curl de Bíceps Martillo en Barra Baja -->
+      <div class="ejercicio" id="ejercicio23">
+        <h3>Curl de Bíceps Martillo en Barra Baja</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_CurlBicepsMartilloBarraBaja">Peso:</label>
+            <input type="number" id="peso_CurlBicepsMartilloBarraBaja" class="peso" value="0"
+              oninput="actualizarVariable(23, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_CurlBicepsMartilloBarraBaja">Repeticiones:</label>
+            <input type="number" id="repeticiones_CurlBicepsMartilloBarraBaja" class="repeticiones" value="0"
+              oninput="actualizarVariable(23, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_CurlBicepsMartilloBarraBaja">RIR:</label>
+            <input type="number" id="rir_CurlBicepsMartilloBarraBaja" class="rir" value="0"
+              oninput="actualizarVariable(23, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Curl de Bíceps en Banco Inclinado -->
+      <div class="ejercicio" id="ejercicio24">
+        <h3>Curl de Bíceps en Banco Inclinado</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_CurlBicepsBancoInclinado">Peso:</label>
+            <input type="number" id="peso_CurlBicepsBancoInclinado" class="peso" value="0"
+              oninput="actualizarVariable(24, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_CurlBicepsBancoInclinado">Repeticiones:</label>
+            <input type="number" id="repeticiones_CurlBicepsBancoInclinado" class="repeticiones" value="0"
+              oninput="actualizarVariable(24, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_CurlBicepsBancoInclinado">RIR:</label>
+            <input type="number" id="rir_CurlBicepsBancoInclinado" class="rir" value="0"
+              oninput="actualizarVariable(24, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Curl de Bíceps en Banco Scott -->
+      <div class="ejercicio" id="ejercicio25">
+        <h3>Curl de Bíceps en Banco Scott</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_CurlBicepsBancoScott">Peso:</label>
+            <input type="number" id="peso_CurlBicepsBancoScott" class="peso" value="0"
+              oninput="actualizarVariable(25, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_CurlBicepsBancoScott">Repeticiones:</label>
+            <input type="number" id="repeticiones_CurlBicepsBancoScott" class="repeticiones" value="0"
+              oninput="actualizarVariable(25, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_CurlBicepsBancoScott">RIR:</label>
+            <input type="number" id="rir_CurlBicepsBancoScott" class="rir" value="0"
+              oninput="actualizarVariable(25, 'rir')">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="triceps" class="grupo-muscular">
+      <!-- Extensiones de Trícep con Soga -->
+      <div class="ejercicio" id="ejercicio26">
+        <h3>Extensiones de Trícep con Soga</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_ExtensionTricepsSoga">Peso:</label>
+            <input type="number" id="peso_ExtensionTricepsSoga" class="peso" value="0"
+              oninput="actualizarVariable(26, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_ExtensionTricepsSoga">Repeticiones:</label>
+            <input type="number" id="repeticiones_ExtensionTricepsSoga" class="repeticiones" value="0"
+              oninput="actualizarVariable(26, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_ExtensionTricepsSoga">RIR:</label>
+            <input type="number" id="rir_ExtensionTricepsSoga" class="rir" value="0"
+              oninput="actualizarVariable(26, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Extensiones de Trícep en Polea Alta Unilateral -->
+      <div class="ejercicio" id="ejercicio27">
+        <h3>Extensiones de Trícep en Polea Alta Unilateral</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_ExtensionTricepsPoleaAltaUnilateral">Peso:</label>
+            <input type="number" id="peso_ExtensionTricepsPoleaAltaUnilateral" class="peso" value="0"
+              oninput="actualizarVariable(27, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_ExtensionTricepsPoleaAltaUnilateral">Repeticiones:</label>
+            <input type="number" id="repeticiones_ExtensionTricepsPoleaAltaUnilateral" class="repeticiones" value="0"
+              oninput="actualizarVariable(27, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_ExtensionTricepsPoleaAltaUnilateral">RIR:</label>
+            <input type="number" id="rir_ExtensionTricepsPoleaAltaUnilateral" class="rir" value="0"
+              oninput="actualizarVariable(27, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Patada de Trícep en Polea -->
+      <div class="ejercicio" id="ejercicio28">
+        <h3>Patada de Trícep en Polea</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_PatadaTricepsPolea">Peso:</label>
+            <input type="number" id="peso_PatadaTricepsPolea" class="peso" value="0"
+              oninput="actualizarVariable(28, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_PatadaTricepsPolea">Repeticiones:</label>
+            <input type="number" id="repeticiones_PatadaTricepsPolea" class="repeticiones" value="0"
+              oninput="actualizarVariable(28, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_PatadaTricepsPolea">RIR:</label>
+            <input type="number" id="rir_PatadaTricepsPolea" class="rir" value="0"
+              oninput="actualizarVariable(28, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Extensiones de Trícep Trasnuca Unilateral en Polea Baja -->
+      <div class="ejercicio" id="ejercicio29">
+        <h3>Extensiones de Trícep Trasnuca Unilateral en Polea Baja</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_ExtensionTricepsTrasnucaUnilateral">Peso:</label>
+            <input type="number" id="peso_ExtensionTricepsTrasnucaUnilateral" class="peso" value="0"
+              oninput="actualizarVariable(29, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_ExtensionTricepsTrasnucaUnilateral">Repeticiones:</label>
+            <input type="number" id="repeticiones_ExtensionTricepsTrasnucaUnilateral" class="repeticiones" value="0"
+              oninput="actualizarVariable(29, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_ExtensionTricepsTrasnucaUnilateral">RIR:</label>
+            <input type="number" id="rir_ExtensionTricepsTrasnucaUnilateral" class="rir" value="0"
+              oninput="actualizarVariable(29, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Extensiones de Trícep Trasnuca en Polea Alta -->
+      <div class="ejercicio" id="ejercicio30">
+        <h3>Extensiones de Trícep Trasnuca en Polea Alta</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_ExtensionTricepsTrasnucaPoleaAlta">Peso:</label>
+            <input type="number" id="peso_ExtensionTricepsTrasnucaPoleaAlta" class="peso" value="0"
+              oninput="actualizarVariable(30, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_ExtensionTricepsTrasnucaPoleaAlta">Repeticiones:</label>
+            <input type="number" id="repeticiones_ExtensionTricepsTrasnucaPoleaAlta" class="repeticiones" value="0"
+              oninput="actualizarVariable(30, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_ExtensionTricepsTrasnucaPoleaAlta">RIR:</label>
+            <input type="number" id="rir_ExtensionTricepsTrasnucaPoleaAlta" class="rir" value="0"
+              oninput="actualizarVariable(30, 'rir')">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="deltoides" class="grupo-muscular">
+      <!-- Vuelos Laterales -->
+      <div class="ejercicio" id="ejercicio31">
+        <h3>Vuelos Laterales</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_VuelosLaterales">Peso:</label>
+            <input type="number" id="peso_VuelosLaterales" class="peso" value="0"
+              oninput="actualizarVariable(31, 'peso')">
+          </div>
+
+          <div class "campo">
+            <label for="repeticiones_VuelosLaterales">Repeticiones:</label>
+            <input type="number" id="repeticiones_VuelosLaterales" class="repeticiones" value="0"
+              oninput="actualizarVariable(31, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_VuelosLaterales">RIR:</label>
+            <input type="number" id="rir_VuelosLaterales" class="rir" value="0" oninput="actualizarVariable(31, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Vuelos Laterales en Polea Baja -->
+      <div class="ejercicio" id="ejercicio32">
+        <h3>Vuelos Laterales en Polea Baja</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_VuelosLateralesPoleaBaja">Peso:</label>
+            <input type="number" id="peso_VuelosLateralesPoleaBaja" class="peso" value="0"
+              oninput="actualizarVariable(32, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_VuelosLateralesPoleaBaja">Repeticiones:</label>
+            <input type="number" id="repeticiones_VuelosLateralesPoleaBaja" class="repeticiones" value="0"
+              oninput="actualizarVariable(32, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_VuelosLateralesPoleaBaja">RIR:</label>
+            <input type="number" id="rir_VuelosLateralesPoleaBaja" class="rir" value="0"
+              oninput="actualizarVariable(32, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Press Militar con Mancuernas -->
+      <div class="ejercicio" id="ejercicio33">
+        <h3>Press Militar con Mancuernas</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_PressMilitarMancuernas">Peso:</label>
+            <input type="number" id="peso_PressMilitarMancuernas" class="peso" value="0"
+              oninput="actualizarVariable(33, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_PressMilitarMancuernas">Repeticiones:</label>
+            <input type="number" id="repeticiones_PressMilitarMancuernas" class="repeticiones" value="0"
+              oninput="actualizarVariable(33, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_PressMilitarMancuernas">RIR:</label>
+            <input type="number" id="rir_PressMilitarMancuernas" class="rir" value="0"
+              oninput="actualizarVariable(33, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Press Militar en Smith -->
+      <div class="ejercicio" id="ejercicio34">
+        <h3>Press Militar en Smith</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_PressMilitarSmith">Peso:</label>
+            <input type="number" id="peso_PressMilitarSmith" class="peso" value="0"
+              oninput="actualizarVariable(34, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_PressMilitarSmith">Repeticiones:</label>
+            <input type="number" id="repeticiones_PressMilitarSmith" class="repeticiones" value="0"
+              oninput="actualizarVariable(34, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_PressMilitarSmith">RIR:</label>
+            <input type="number" id="rir_PressMilitarSmith" class="rir" value="0"
+              oninput="actualizarVariable(34, 'rir')">
+          </div>
+        </div>
+      </div>
+
+      <!-- Posteriores en Máquina -->
+      <div class="ejercicio" id="ejercicio35">
+        <h3>Posteriores en Máquina</h3>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="peso_PosterioresMaquina">Peso:</label>
+            <input type="number" id="peso_PosterioresMaquina" class="peso" value="0"
+              oninput="actualizarVariable(35, 'peso')">
+          </div>
+
+          <div class="campo">
+            <label for="repeticiones_PosterioresMaquina">Repeticiones:</label>
+            <input type="number" id="repeticiones_PosterioresMaquina" class="repeticiones" value="0"
+              oninput="actualizarVariable(35, 'repeticiones')">
+          </div>
+
+          <div class="campo">
+            <label for="rir_PosterioresMaquina">RIR:</label>
+            <input type="number" id="rir_PosterioresMaquina" class="rir" value="0"
+              oninput="actualizarVariable(35, 'rir')">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
-  <!-- Agrega más ejercicios según sea necesario -->
 
-</div>
+
+  <script src="main.js"></script>
+  </div>
 
 </body>
+
 </html>
