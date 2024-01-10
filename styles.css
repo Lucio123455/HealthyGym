@@ -1,6 +1,6 @@
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #e6e6e6; /* Cambiado a un tono más claro */
+  background-color: #1a1a1a; /* Negro */
   margin: 0;
   padding: 0;
 }
@@ -9,13 +9,13 @@ body {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #333; /* Gris oscuro */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Borde claro */
 }
 
 h2 {
   text-align: center;
-  color: #1a1a1a; /* Cambiado a un tono más oscuro */
+  color: #fff; /* Blanco */
 }
 
 .ejercicio {
@@ -23,7 +23,7 @@ h2 {
 }
 
 h3 {
-  color: #4285f4;
+  color: #e92a60;
 }
 
 .campos {
@@ -39,20 +39,20 @@ h3 {
 label {
   display: block;
   margin-bottom: 5px;
-  color: #555;
+  color: #ddd; /* Gris claro */
 }
 
 input {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #555; /* Gris */
   border-radius: 4px;
 }
 
 input:focus {
   outline: none;
-  border-color: #4285f4;
+  border-color: #e92a60;
 }
 
 #grupos-musculares {
@@ -64,8 +64,8 @@ input:focus {
   margin: 5px;
   padding: 10px 15px;
   font-size: 16px;
-  background-color: #3498db; /* Cambiado a un tono de azul */
-  color: white;
+  background-color: #333; /* Gris oscuro */
+  color: #fff; /* Blanco */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -73,5 +73,5 @@ input:focus {
 }
 
 #botones button:hover {
-  background-color: #2980b9; /* Cambiado el color al pasar el ratón por encima */
+  background-color: #555; /* Gris más oscuro al pasar el ratón por encima */
 }
