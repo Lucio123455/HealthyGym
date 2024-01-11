@@ -64,7 +64,7 @@ input:focus {
   margin: 5px;
   padding: 10px 15px;
   font-size: 16px;
-  background-color: #333; /* Gris oscuro */
+  background-color: #e92a60; /* Gris oscuro */
   color: #fff; /* Blanco */
   border: none;
   border-radius: 5px;
@@ -73,5 +73,34 @@ input:focus {
 }
 
 #botones button:hover {
-  background-color: #555; /* Gris más oscuro al pasar el ratón por encima */
+  background-color: #d9534f; /* Gris más oscuro al pasar el ratón por encima */
+}
+
+#botonOcultar {
+  background-color: #d9534f; /* Color de fondo rojo */
+  color: #fff; /* Color de texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 50%; /* Borde redondeado para formar una cruz */
+  width: 30px; /* Ancho del botón */
+  height: 30px; /* Altura del botón */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.3s ease; 
+  position: relative;
+  top: 18px;
+}
+
+#botonOcultar:hover {
+  background-color: #c9302c; /* Cambia el color al pasar el ratón por encima */
+}
+
+
+img {
+  width: 18px;
+  height: auto;
+}
+
+.nombre-ejercicio{
+  display: flex;
+  justify-content: space-between;
 }

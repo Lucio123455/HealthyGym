@@ -17,9 +17,7 @@
       <button onclick="mostrarGrupo('biceps')">Biceps</button>
       <button onclick="mostrarGrupo('triceps')">Triceps</button>
       <button onclick="mostrarGrupo('deltoides')">Hombro</button>
-      <!-- <button onclick="reiniciarEjercicios()">Reiniciar Ejercicios</button> -->
-
-      <!-- Agrega más botones para otros grupos musculares -->
+      <button onclick="eliminarEjerciciosOcultos()">Mostrar ejercicios ocultos</button>
     </div>
   </div>
 
@@ -28,7 +26,11 @@
 
     <div id="pecho" class="grupo-muscular">
       <div class="ejercicio" id="ejercicio0">
-        <h3>Press Banca</h3>
+        <div class="nombre-ejercicio">
+          <h3>Press Banca</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(0)"><img src="x.png" alt=""></button>
+        </div>
+        
 
         <div class="campos">
           <div class="campo">
@@ -49,9 +51,12 @@
         </div>
       </div>
 
-      <div class="ejercicio" id="ejercicio1">
-        <h3>Press inclinado smith</h3>
 
+      <div class="ejercicio" id="ejercicio1">
+        <div class="nombre-ejercicio">
+          <h3>Press inclinado smith</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(1)"><img src="x.png" alt=""></button>
+        </div>
         <div class="campos">
           <div class="campo">
             <label for="peso_PressBanca">Peso:</label>
@@ -72,7 +77,10 @@
       </div>
 
       <div class="ejercicio" id="ejercicio2">
-        <h3>Cruce de poleas</h3>
+        <div class="nombre-ejercicio">
+          <h3>Cruce de poleas</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(2)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -95,7 +103,10 @@
 
       <!-- Apertura en Máquina -->
       <div class="ejercicio" id="ejercicio3">
-        <h3>Apertura en Máquina</h3>
+        <div class="nombre-ejercicio">
+          <h3>Apertura en maquina</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(3)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -119,7 +130,10 @@
 
       <!-- Press Banca en Máquina -->
       <div class="ejercicio" id="ejercicio4">
-        <h3>Press Banca en Máquina</h3>
+        <div class="nombre-ejercicio">
+          <h3>Press Banca en maquina</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(4)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -144,7 +158,10 @@
 
       <!-- Press Inclinado en Máquina -->
       <div class="ejercicio" id="ejercicio5">
-        <h3>Press Inclinado en Máquina</h3>
+        <div class="nombre-ejercicio">
+          <h3>Press inclinado en maquina</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(5)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -169,7 +186,10 @@
 
       <!-- Press Inclinado con Mancuerna -->
       <div class="ejercicio" id="ejercicio13">
-        <h3>Press Inclinado con Mancuerna</h3>
+        <div class="nombre-ejercicio">
+          <h3>Press inclinado con mancuerna</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(13)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -197,7 +217,10 @@
     <div id="pierna" class="grupo-muscular">
       <!-- Sentadilla Hack -->
       <div class="ejercicio" id="ejercicio6">
-        <h3>Sentadilla Hack</h3>
+        <div class="nombre-ejercicio">
+          <h3>Sentadilla Hack</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(6)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -221,7 +244,10 @@
 
       <!-- Sentadilla Smith -->
       <div class="ejercicio" id="ejercicio7">
-        <h3>Sentadilla Smith</h3>
+        <div class="nombre-ejercicio">
+          <h3>Sentadilla Smith</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(7)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -245,7 +271,10 @@
 
       <!-- Prensa -->
       <div class="ejercicio" id="ejercicio8">
-        <h3>Prensa</h3>
+        <div class="nombre-ejercicio">
+          <h3>Prensa</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(8)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -268,7 +297,10 @@
 
       <!-- Extensión de Cuádriceps -->
       <div class="ejercicio" id="ejercicio9">
-        <h3>Extensión de Cuádriceps</h3>
+        <div class="nombre-ejercicio">
+          <h3>Extencion de cuadriceps</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(9)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -293,7 +325,10 @@
 
       <!-- Curl Femoral Acostado -->
       <div class="ejercicio" id="ejercicio10">
-        <h3>Curl Femoral Acostado</h3>
+        <div class="nombre-ejercicio">
+          <h3>Curl femoral Acostado</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(10)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -318,7 +353,10 @@
 
       <!-- Peso Muerto Rumano -->
       <div class="ejercicio" id="ejercicio11">
-        <h3>Peso Muerto Rumano</h3>
+        <div class="nombre-ejercicio">
+          <h3>Peso muerto rumano</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(11)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -343,7 +381,10 @@
 
       <!-- Gemelos en Máquina -->
       <div class="ejercicio" id="ejercicio12">
-        <h3>Gemelos en Máquina</h3>
+        <div class="nombre-ejercicio">
+          <h3>Gemelos en maquina</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(12)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -370,7 +411,10 @@
     <div id="espalda" class="grupo-muscular">
       <!-- Remo en Máquina Unilateral -->
       <div class="ejercicio" id="ejercicio14">
-        <h3>Remo en Máquina Unilateral</h3>
+        <div class="nombre-ejercicio">
+          <h3>Remo en maquina unilateral</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(14)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -395,7 +439,10 @@
 
       <!-- Remo Gironda -->
       <div class="ejercicio" id="ejercicio15">
-        <h3>Remo Gironda</h3>
+        <div class="nombre-ejercicio">
+          <h3>Remo gironda</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(15)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -418,7 +465,10 @@
 
       <!-- Dominadas -->
       <div class="ejercicio" id="ejercicio16">
-        <h3>Dominadas</h3>
+        <div class="nombre-ejercicio">
+          <h3>Dominadas</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(16)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -441,7 +491,10 @@
 
       <!-- Jalon al Pecho -->
       <div class="ejercicio" id="ejercicio17">
-        <h3>Jalon al Pecho</h3>
+        <div class="nombre-ejercicio">
+          <h3>Jalon al pecho</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(17)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -464,7 +517,10 @@
 
       <!-- Remo con Barra -->
       <div class="ejercicio" id="ejercicio18">
-        <h3>Remo con Barra</h3>
+        <div class="nombre-ejercicio">
+          <h3>Remo con barra</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(18)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -472,7 +528,7 @@
             <input type="number" id="peso_RemoBarra" class="peso" value="0" oninput="actualizarVariable(18, 'peso')">
           </div>
 
-          <div class "campo">
+          <div class ="campo">
             <label for="repeticiones_RemoBarra">Repeticiones:</label>
             <input type="number" id="repeticiones_RemoBarra" class="repeticiones" value="0"
               oninput="actualizarVariable(18, 'repeticiones')">
@@ -487,7 +543,10 @@
 
       <!-- Remo en Máquina -->
       <div class="ejercicio" id="ejercicio19">
-        <h3>Remo en Máquina</h3>
+        <div class="nombre-ejercicio">
+          <h3>Remo en maquina</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(19)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -515,7 +574,10 @@
     <div id="biceps" class="grupo-muscular">
       <!-- Curl Bíceps Barra W -->
       <div class="ejercicio" id="ejercicio20">
-        <h3>Curl Bíceps Barra W</h3>
+        <div class="nombre-ejercicio">
+          <h3>Curl biceps barra w</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(20)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -540,7 +602,10 @@
 
       <!-- Curl Bíceps con Barra en Polea Baja -->
       <div class="ejercicio" id="ejercicio21">
-        <h3>Curl Bíceps con Barra en Polea Baja</h3>
+        <div class="nombre-ejercicio">
+          <h3>Curl biceps con barra en polea baja(medio de puto)</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(21)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -565,7 +630,10 @@
 
       <!-- Curl Bíceps Martillo -->
       <div class="ejercicio" id="ejercicio22">
-        <h3>Curl Bíceps Martillo</h3>
+        <div class="nombre-ejercicio">
+          <h3>Curl biceps martillo</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(22)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -590,7 +658,10 @@
 
       <!-- Curl de Bíceps Martillo en Barra Baja -->
       <div class="ejercicio" id="ejercicio23">
-        <h3>Curl de Bíceps Martillo en Barra Baja</h3>
+        <div class="nombre-ejercicio">
+          <h3>Curl biceps martillo en polea baja</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(23)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -615,7 +686,10 @@
 
       <!-- Curl de Bíceps en Banco Inclinado -->
       <div class="ejercicio" id="ejercicio24">
-        <h3>Curl de Bíceps en Banco Inclinado</h3>
+        <div class="nombre-ejercicio">
+          <h3>Curl de biceps en banco inclinado</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(24)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -640,7 +714,10 @@
 
       <!-- Curl de Bíceps en Banco Scott -->
       <div class="ejercicio" id="ejercicio25">
-        <h3>Curl de Bíceps en Banco Scott</h3>
+        <div class="nombre-ejercicio">
+          <h3>Curl de biceps en banco Scott</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(25)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -668,7 +745,10 @@
     <div id="triceps" class="grupo-muscular">
       <!-- Extensiones de Trícep con Soga -->
       <div class="ejercicio" id="ejercicio26">
-        <h3>Extensiones de Trícep con Soga</h3>
+        <div class="nombre-ejercicio">
+          <h3>Extensiones de triceps con soga</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(26)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -693,7 +773,10 @@
 
       <!-- Extensiones de Trícep en Polea Alta Unilateral -->
       <div class="ejercicio" id="ejercicio27">
-        <h3>Extensiones de Trícep en Polea Alta Unilateral</h3>
+        <div class="nombre-ejercicio">
+          <h3>Extensiones de triceps en polea alta unilateral</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(27)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -718,7 +801,10 @@
 
       <!-- Patada de Trícep en Polea -->
       <div class="ejercicio" id="ejercicio28">
-        <h3>Patada de Trícep en Polea</h3>
+        <div class="nombre-ejercicio">
+          <h3>Patada de triceps en polea</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(28)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -743,7 +829,10 @@
 
       <!-- Extensiones de Trícep Trasnuca Unilateral en Polea Baja -->
       <div class="ejercicio" id="ejercicio29">
-        <h3>Extensiones de Trícep Trasnuca Unilateral en Polea Baja</h3>
+        <div class="nombre-ejercicio">
+          <h3>Extensiones de triceps Trasnuca unilateral en polea Baja</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(29)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -768,7 +857,10 @@
 
       <!-- Extensiones de Trícep Trasnuca en Polea Alta -->
       <div class="ejercicio" id="ejercicio30">
-        <h3>Extensiones de Trícep Trasnuca en Polea Alta</h3>
+        <div class="nombre-ejercicio">
+          <h3>Extensiones de triceps Trasnuca en polea alta</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(30)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -796,7 +888,10 @@
     <div id="deltoides" class="grupo-muscular">
       <!-- Vuelos Laterales -->
       <div class="ejercicio" id="ejercicio31">
-        <h3>Vuelos Laterales</h3>
+        <div class="nombre-ejercicio">
+          <h3>Vuelos Laterales</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(31)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -805,7 +900,7 @@
               oninput="actualizarVariable(31, 'peso')">
           </div>
 
-          <div class ="campo">
+          <div class="campo">
             <label for="repeticiones_VuelosLaterales">Repeticiones:</label>
             <input type="number" id="repeticiones_VuelosLaterales" class="repeticiones" value="0"
               oninput="actualizarVariable(31, 'repeticiones')">
@@ -820,7 +915,10 @@
 
       <!-- Vuelos Laterales en Polea Baja -->
       <div class="ejercicio" id="ejercicio32">
-        <h3>Vuelos Laterales en Polea Baja</h3>
+        <div class="nombre-ejercicio">
+          <h3>Vuelos Laterales en polea baja</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(32)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -845,7 +943,10 @@
 
       <!-- Press Militar con Mancuernas -->
       <div class="ejercicio" id="ejercicio33">
-        <h3>Press Militar con Mancuernas</h3>
+        <div class="nombre-ejercicio">
+          <h3>Press militar con Mancuernas</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(33)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -870,7 +971,10 @@
 
       <!-- Press Militar en Smith -->
       <div class="ejercicio" id="ejercicio34">
-        <h3>Press Militar en Smith</h3>
+        <div class="nombre-ejercicio">
+          <h3>Press militar en smith</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(34)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
@@ -895,7 +999,10 @@
 
       <!-- Posteriores en Máquina -->
       <div class="ejercicio" id="ejercicio35">
-        <h3>Posteriores en Máquina</h3>
+        <div class="nombre-ejercicio">
+          <h3>Posteriores en maquina</h3>
+          <button id="botonOcultar" onclick="ocultarEjercicio(35)"><img src="x.png" alt=""></button>
+        </div>
 
         <div class="campos">
           <div class="campo">
